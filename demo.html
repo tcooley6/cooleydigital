@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get a Free Demo Website | Cooley Digital</title>
+  <meta name="description" content="Answer a few quick questions and Cooley Digital will build a free demo website for your local service business. No cost, no obligation.">
+  <meta name="theme-color" content="#14213D">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Get a Free Demo Website | Cooley Digital">
+  <meta property="og:description" content="Answer a few quick questions and we'll build a free demo website for your business.">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="wordmark" aria-label="Cooley Digital home">
+        <span class="wordmark__mark" aria-hidden="true">C</span>
+        Cooley Digital
+      </a>
+      <a href="demo.html" class="btn btn--primary" aria-current="page">
+        <span class="btn-label-full">Get a Free Demo</span>
+        <span class="btn-label-short">Free Demo</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-intro">
+      <div class="container container--narrow">
+        <span class="eyebrow">Free demo</span>
+        <h1>Let's build your demo site</h1>
+        <p>Answer a few quick questions and we'll build a free demo website for your business. No cost, no obligation.</p>
+      </div>
+    </section>
+
+    <section class="section section--flush-top">
+      <div class="container container--narrow">
+        <div class="form-card">
+          <p class="form-note">Fields marked <span class="req" aria-hidden="true">*</span> are required.</p>
+
+          <form
+            name="demo-request"
+            method="POST"
+            action="/thank-you.html"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            novalidate
+            data-validate>
+            <input type="hidden" name="form-name" value="demo-request">
+
+            <!-- Honeypot: hidden from people, bots fill it in -->
+            <p class="visually-hidden" aria-hidden="true">
+              <label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+            </p>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Your name<span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
+                <span class="field__error" id="name-error">Please enter your name.</span>
+              </div>
+
+              <div class="field">
+                <label for="business">Business name<span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="business" name="business-name" autocomplete="organization" required aria-describedby="business-error">
+                <span class="field__error" id="business-error">Please enter your business name.</span>
+              </div>
+
+              <div class="field">
+                <label for="email">Email<span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required aria-describedby="email-error">
+                <span class="field__error" id="email-error">Please enter a valid email address.</span>
+              </div>
+
+              <div class="field">
+                <label for="phone">Phone<span class="optional">(optional)</span></label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel">
+              </div>
+
+              <div class="field">
+                <label for="business-type">Type of business<span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="business-type" name="business-type" placeholder="e.g. Plumbing, landscaping, salon" required aria-describedby="business-type-error">
+                <span class="field__error" id="business-type-error">Please tell us what kind of business you run.</span>
+              </div>
+
+              <div class="field">
+                <label for="area">City / service area<span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="area" name="service-area" autocomplete="address-level2" placeholder="e.g. Austin and surrounding areas" required aria-describedby="area-error">
+                <span class="field__error" id="area-error">Please enter your city or service area.</span>
+              </div>
+
+              <div class="field field--full">
+                <label for="website">Current website, if any<span class="optional">(optional)</span></label>
+                <input type="text" id="website" name="current-website" autocomplete="url" inputmode="url" placeholder="www.yourbusiness.com">
+              </div>
+
+              <div class="field field--full">
+                <label for="services">Main services you offer<span class="optional">(optional)</span></label>
+                <textarea id="services" name="services" rows="4" placeholder="e.g. Drain cleaning, water heater installs, emergency repairs"></textarea>
+              </div>
+
+              <div class="field field--full">
+                <label for="goal">What do you most want visitors to do?<span class="optional">(optional)</span></label>
+                <select id="goal" name="visitor-goal">
+                  <option value="" selected>Choose one</option>
+                  <option>Call us</option>
+                  <option>Book online</option>
+                  <option>Request a quote</option>
+                  <option>Visit our location</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="field field--full">
+                <label for="style">Any colors, styles, or websites you like?<span class="optional">(optional)</span></label>
+                <textarea id="style" name="style-preferences" rows="4" placeholder="Share colors, a vibe, or links to sites you like"></textarea>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn--tan btn--lg btn--block">
+                Request My Free Demo <span class="btn__arrow" aria-hidden="true">&rarr;</span>
+              </button>
+              <small>No cost, no obligation. We'll never share your info.</small>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__inner">
+        <div>
+          <a href="index.html" class="wordmark wordmark--light">
+            <span class="wordmark__mark" aria-hidden="true">C</span>
+            Cooley Digital
+          </a>
+          <p class="site-footer__tagline">Websites for local service businesses.</p>
+        </div>
+        <div class="site-footer__contact">
+          <p>Questions? Email us at<br><a href="mailto:[YOUR EMAIL]">[YOUR EMAIL]</a></p>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p>&copy; <span data-year>2026</span> Cooley Digital. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

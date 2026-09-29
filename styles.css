@@ -13,11 +13,14 @@
   --tan: #d2b48c;
   --tan-dark: #bf9d70;
   --tan-light: #e8d8c0;
+  --tan-card: #dcc4a0;   /* cards, steps, form panel */
+  --tan-field: #e6d4b8;  /* form inputs */
+  --tan-line: #8b6b42;   /* darker outline around boxes */
   --cream: #f5efe6;
   --white: #ffffff;
-  --text: #1c2333;
-  --text-muted: #5a6275;
-  --border: #e4dccf;
+  --text: #14213d;
+  --text-muted: #2c3b5e;
+  --border: #8b6b42;
   --error: #b3261e;
 
   --font-heading: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -59,7 +62,7 @@ body {
   font-size: 1rem;
   line-height: 1.65;
   color: var(--text);
-  background: var(--white);
+  background: var(--tan);
   -webkit-font-smoothing: antialiased;
   display: flex;
   flex-direction: column;
@@ -98,7 +101,7 @@ img {
 }
 
 :focus-visible {
-  outline: 3px solid var(--tan);
+  outline: 3px solid var(--navy);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -128,7 +131,10 @@ img {
   padding: var(--section-y) 0;
 }
 
-.section--cream { background: var(--cream); }
+.section--cream,
+.section--tan { background: var(--tan); }
+.section--tan + .section--tan,
+.section--cream + .section--tan { border-top: 1px solid rgba(139, 107, 66, 0.35); }
 .section--navy  { background: var(--navy); color: var(--white); }
 .section--flush-top { padding-top: 0; }
 
@@ -151,8 +157,14 @@ img {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--tan-dark);
+  color: var(--navy);
+  opacity: 0.8;
   margin-bottom: 0.75rem;
+}
+
+.hero .eyebrow {
+  color: var(--tan);
+  opacity: 1;
 }
 
 /* 4. Components
@@ -181,7 +193,7 @@ img {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(210, 180, 140, 0.94);
   backdrop-filter: saturate(180%) blur(10px);
   -webkit-backdrop-filter: saturate(180%) blur(10px);
   border-bottom: 1px solid transparent;
@@ -305,7 +317,8 @@ img {
 
 /* Cards */
 .card {
-  background: var(--white);
+  background: var(--tan-card);
+  border: 2px solid var(--tan-line);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
   overflow: hidden;
@@ -346,7 +359,7 @@ img {
 }
 
 .site-footer__bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   margin-top: 2rem;
   padding-top: 1.5rem;
   font-size: 0.875rem;
@@ -430,7 +443,7 @@ img {
   aspect-ratio: 16 / 10;
   background: linear-gradient(135deg, var(--cream), var(--tan-light));
   overflow: hidden;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--tan-line);
 }
 
 .work-card__media img {
@@ -475,7 +488,7 @@ img {
   font-weight: 700;
   color: var(--navy);
   text-decoration: none;
-  border-bottom: 2px solid var(--tan);
+  border-bottom: 2px solid var(--tan-line);
   padding-bottom: 2px;
   transition: gap 0.2s var(--ease), border-color 0.2s var(--ease);
 }
@@ -497,10 +510,10 @@ img {
 }
 
 .step {
-  background: var(--cream);
+  background: var(--tan-card);
   border-radius: var(--radius-lg);
   padding: 2rem 1.75rem;
-  border: 1px solid var(--border);
+  border: 2px solid var(--tan-line);
   transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 
@@ -546,7 +559,7 @@ img {
 
 /* Page intro (inner pages) */
 .page-intro {
-  background: var(--cream);
+  background: var(--tan);
   padding: 3.5rem 0 3rem;
   text-align: center;
 }
@@ -571,9 +584,10 @@ img {
   height: 80px;
   margin: 0 auto 1.75rem;
   border-radius: 50%;
-  background: var(--cream);
+  background: var(--tan-card);
+  border: 2px solid var(--tan-line);
   color: var(--navy);
-  box-shadow: 0 0 0 10px rgba(210, 180, 140, 0.2);
+  box-shadow: 0 0 0 10px rgba(139, 107, 66, 0.15);
 }
 
 .confirm p {
@@ -586,7 +600,8 @@ img {
 /* 6. Forms
    -------------------------------------------------------------------------- */
 .form-card {
-  background: var(--white);
+  background: var(--tan-card);
+  border: 2px solid var(--tan-line);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
   padding: 1.75rem 1.25rem;
@@ -619,7 +634,7 @@ img {
 }
 
 .req {
-  color: var(--tan-dark);
+  color: var(--navy);
   font-weight: 700;
   margin-left: 0.15rem;
 }
@@ -637,9 +652,9 @@ img {
   width: 100%;
   font: inherit;
   font-size: 1rem; /* prevents iOS zoom on focus */
-  color: var(--text);
-  background: var(--white);
-  border: 1.5px solid var(--border);
+  color: var(--navy);
+  background: var(--tan-field);
+  border: 2px solid var(--tan-line);
   border-radius: var(--radius-sm);
   padding: 0.8rem 0.9rem;
   transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
@@ -662,13 +677,13 @@ img {
 
 .field input::placeholder,
 .field textarea::placeholder {
-  color: #9aa1b0;
+  color: rgba(20, 33, 61, 0.5);
 }
 
 .field input:hover,
 .field select:hover,
 .field textarea:hover {
-  border-color: var(--tan);
+  border-color: var(--navy);
 }
 
 .field input:focus,
@@ -676,7 +691,7 @@ img {
 .field textarea:focus {
   outline: none;
   border-color: var(--navy);
-  box-shadow: 0 0 0 4px rgba(210, 180, 140, 0.35);
+  box-shadow: 0 0 0 4px rgba(20, 33, 61, 0.18);
 }
 
 .field.has-error input,
